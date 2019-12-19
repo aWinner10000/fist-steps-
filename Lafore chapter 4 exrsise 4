@@ -1,0 +1,81 @@
+/*Create a structure called employee that contains two members: an employee number
+(type int) and the employee’s compensation (in dollars; type float). Ask the user to fill
+in this data for three employees, store it in three variables of type struct employee, and
+then display the information for each employee 
+Создайте структуру с именем employee, содержащую два поля: номер сотрудника типа int и величину его пособия в долларах типа float.
+ Запросите с клавиатуры данные о трех сотрудниках, сохраните их в трех структурных переменных типа employee и выведите информацию о каждом из
+сотрудников на экран.
+ */
+
+
+#include <iostream>
+#include <iomanip>
+#include <CTYPE.H.>
+#include <string>
+#include <conio.h>
+using namespace std;
+
+struct employee
+{
+int numb;
+float salary;
+};
+
+struct worker {
+
+   employee work1;
+   employee work2;
+   employee worl3;
+};
+
+int main()
+{
+       setlocale(LC_ALL, "Russian");
+       worker choos;
+       choos.work1.numb = 1;
+       choos.work2.numb = 2;
+       choos.worl3.numb = 3;
+       choos.work1.salary = 100;
+       choos.work2.salary = 150;
+       choos.worl3.salary = 200;
+       cout << "do want to kow how many worker we have ? y or n ";
+       char staff;
+       cin >> staff;
+         if (staff != 'n') {
+            cout << " it is worker number :" << choos.work1.numb << endl
+                 << " it is worker number :" <<  choos.work2.numb << endl
+                 << " it is worker number :" <<   choos.worl3.numb << endl;
+
+       cout << "which worker intresting you 1, 2, 3 choos that as а or b or c : ";
+       char ch;
+       cin >> ch;
+         switch (ch){
+     case 'a':
+        cout << "it is fist worker you want to know his salary y/n \n";
+        cin >> ch;
+        if (ch = 'y') {
+            cout << "$ " << choos.work1.salary << "   salary first worker \n";
+        }
+        //break;
+       case 'b':
+        cout << "it is second worker you want to know his salary y/n \n";
+        cin >> ch;
+        if (ch = 'y') {
+            cout << "$ " << choos.work2.salary << "   salary second worker \n";
+        }
+        //break;
+         case 'c':
+        cout << "it is third worker you want to know his salary y/n \n";
+        cin >> ch;
+        if (ch = 'y') {
+            cout << "$ " << choos.worl3.salary << "   salary third worker \n";
+        }
+        break;
+         default:
+            cout << "wrong choos one more time ";
+            }
+
+         }// end of if (staff = 'y')
+     else cout << " thank you good bye  ";
+return 0;
+}
